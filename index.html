@@ -99,7 +99,7 @@
       }
 
       .accordions {
-        height: 87%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -107,10 +107,16 @@
 
       .accordion {
         border-bottom: 1px solid var(--purple-100);
+        padding: 21px 0;
+      }
+
+      .accordion:first-child {
+        padding-top: 0;
       }
 
       .accordion:last-child {
         border-bottom: none;
+        padding-bottom: 0;
       }
 
       .question {
@@ -122,6 +128,10 @@
 
       .answer {
         display: none;
+        font-size: 0.9rem;
+        margin-top: 23px;
+        line-height: 1.45;
+        letter-spacing: -0.1px;
       }
 
       footer {
@@ -238,10 +248,15 @@
           const answer = question.nextElementSibling;
           const switch_icon = question.querySelector(".switch");
 
-          if (answer.style.display === "block") {
+          document.querySelectorAll(".answer").forEach((answer) => {
             answer.style.display = "none";
-            switch_icon.src = "assets/images/icon-plus.svg";
-          } else {
+          });
+
+          document.querySelectorAll(".switch").forEach((icon) => {
+            icon.src = "assets/images/icon-plus.svg";
+          });
+
+          if (answer.style.display !== "block") {
             answer.style.display = "block";
             switch_icon.src = "assets/images/icon-minus.svg";
           }
