@@ -79,10 +79,14 @@
         translate: -50% -50%;
 
         border-radius: 13px;
-        padding: 23px;
+        padding: 24px;
         padding-top: 25px;
 
         box-shadow: 0px 20px 40px var(--box-shadow);
+
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 7fr;
       }
 
       h1 {
@@ -92,6 +96,8 @@
         font-size: 2rem;
         gap: 25px;
         margin-bottom: 24px;
+        grid-column: 1;
+        grid-row: 1;
       }
 
       h1 span img {
@@ -99,7 +105,6 @@
       }
 
       .accordions {
-        height: 80%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -107,7 +112,7 @@
 
       .accordion {
         border-bottom: 1px solid var(--purple-100);
-        padding: 21px 0;
+        padding-bottom: 21px;
       }
 
       .accordion:first-child {
@@ -124,6 +129,8 @@
         justify-content: space-between;
         font-weight: var(--font-weight-semi-bold);
         gap: 20px;
+        align-items: center;
+        cursor: pointer;
       }
 
       .answer {
@@ -132,6 +139,11 @@
         margin-top: 23px;
         line-height: 1.45;
         letter-spacing: -0.1px;
+        color: var(--purple-600);
+      }
+
+      .accordion:first-child .answer {
+        display: block;
       }
 
       footer {
@@ -152,10 +164,52 @@
         pointer-events: none; /* คลิกทะลุ ไม่บังปุ่ม/ลิงก์ */
         z-index: 9999; /* ให้ overlay อยู่บนสุด */
       }
+
+      @media (min-width: 1440px) {
+        body {
+          background-image: url(assets/images/background-pattern-desktop.svg);
+        }
+
+        main {
+          width: 600px;
+          height: 567px;
+          border-radius: 15px;
+
+          padding: 42px 40px 38px 40px;
+          gap: 5px;
+        }
+
+        h1 {
+          font-size: 3.5rem;
+        }
+
+        h1 span img {
+          height: 40px;
+        }
+
+        .accordion {
+          padding-bottom: 25px;
+        }
+
+        .accordion:first-child {
+          margin-bottom: 4px;
+        }
+
+        .question {
+          font-size: 1.1rem;
+          letter-spacing: 0.2px;
+        }
+
+        .answer {
+          font-size: 1rem;
+          letter-spacing: 0px;
+          margin-top: 22px;
+        }
+      }
     </style>
   </head>
   <body>
-    <img src="design/mobile-design.jpg" alt="overlay" id="temp" />
+    <!-- <img src="design/desktop-design.jpg" alt="overlay" id="temp" /> -->
     <div class="container">
       <main>
         <h1>
