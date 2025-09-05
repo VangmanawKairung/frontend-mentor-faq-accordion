@@ -61,6 +61,7 @@
         background-size: contain;
         background-color: var(--purple-100);
         color: var(--purple-950);
+        transition: background-image 1s ease;
       }
 
       .container {
@@ -87,6 +88,8 @@
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 1fr 7fr;
+
+        transition: width 0.5s ease, height 0.5s ease;
       }
 
       h1 {
@@ -112,7 +115,7 @@
 
       .accordion {
         border-bottom: 1px solid var(--purple-100);
-        padding-bottom: 21px;
+        padding: 1px 0 20px 0;
       }
 
       .accordion:first-child {
@@ -134,16 +137,15 @@
       }
 
       .answer {
-        display: none;
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+        overflow: hidden;
         font-size: 0.9rem;
-        margin-top: 23px;
         line-height: 1.45;
-        letter-spacing: -0.1px;
+        letter-spacing: -0.15px;
         color: var(--purple-600);
-      }
-
-      .accordion:first-child .answer {
-        display: block;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
       }
 
       footer {
@@ -175,7 +177,7 @@
           height: 567px;
           border-radius: 15px;
 
-          padding: 42px 40px 38px 40px;
+          padding: 42px 40px 40px 40px;
           gap: 5px;
         }
 
@@ -188,11 +190,17 @@
         }
 
         .accordion {
-          padding-bottom: 25px;
+          padding: 25px 0 19px 0;
         }
 
         .accordion:first-child {
-          margin-bottom: 4px;
+          margin-top: 0px;
+          padding-top: 0px;
+        }
+
+        .accordion:last-child {
+          margin-bottom: 0px;
+          padding-bottom: 0px;
         }
 
         .question {
@@ -203,7 +211,6 @@
         .answer {
           font-size: 1rem;
           letter-spacing: 0px;
-          margin-top: 22px;
         }
       }
     </style>
@@ -224,7 +231,7 @@
               <span>
                 <img
                   class="switch"
-                  src="assets/images/icon-plus.svg"
+                  src="assets/images/icon-minus.svg"
                   alt="toggle switch icon"
                 />
               </span>
@@ -295,6 +302,15 @@
       </footer>
     </div>
     <script>
+      // เปิดคำตอบแรกเป็น default
+      const firstAnswer = document.querySelector(".answer");
+      const firstIcon = document.querySelector(".switch");
+      firstAnswer.style.maxHeight = firstAnswer.scrollHeight + "px";
+      firstAnswer.style.opacity = 1;
+      firstAnswer.style.marginTop = "22px";
+      firstAnswer.style.marginBottom = "3px";
+      firstIcon.src = "assets/images/icon-minus.svg";
+
       const questions = document.querySelectorAll(".question");
 
       questions.forEach((question) => {
@@ -302,16 +318,25 @@
           const answer = question.nextElementSibling;
           const switch_icon = question.querySelector(".switch");
 
-          document.querySelectorAll(".answer").forEach((answer) => {
-            answer.style.display = "none";
+          document.querySelectorAll(".answer").forEach((ans) => {
+            ans.style.maxHeight = 0;
+            ans.style.opacity = 0;
+            ans.style.marginTop = 0;
+            ans.style.marginBottom = 0;
           });
 
           document.querySelectorAll(".switch").forEach((icon) => {
             icon.src = "assets/images/icon-plus.svg";
           });
 
-          if (answer.style.display !== "block") {
-            answer.style.display = "block";
+          if (
+            answer.style.maxHeight === "0px" ||
+            answer.style.maxHeight === ""
+          ) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            answer.style.opacity = 1;
+            answer.style.marginTop = "22px";
+            firstAnswer.style.marginBottom = "3px";
             switch_icon.src = "assets/images/icon-minus.svg";
           }
         });
