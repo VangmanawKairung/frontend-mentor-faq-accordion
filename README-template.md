@@ -1,20 +1,23 @@
 # Frontend Mentor - FAQ accordion solution
 
-This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - FAQ accordion solution](#frontend-mentor---faq-accordion-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Challenge result](#challenge-result)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -29,13 +32,21 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
+### Challenge result
+
+- **05 Sep 2025**
+  - ✅ Hide/Show the answer to a question when the question is clicked
+  - ✅ View the optimal layout for the interface depending on their device's screen size
+  - ⚠️ See hover and focus states for all interactive elements on the page (basic cursor pointer added, hover/focus styles to be improved)
+  - ❌ Navigate the questions and hide/show answers using keyboard navigation alone
+
 ### Screenshot
 
 ![](./screenshot.jpg)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -51,45 +62,28 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS custom properties (variables)
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Responsive design with media queries
+- Vanilla JavaScript (DOM manipulation & event handling)
+- CSS transitions for smooth animations
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- **05 Sep 2025**
+  - Learned how to use `querySelector()` not only on `document` but also on specific elements to scope DOM selection.
+  - Practiced using `scrollHeight` to dynamically set `max-height` for smooth accordion transitions.
+  - Implemented CSS transitions with `max-height` and `opacity` instead of `display`, which cannot be animated.
+  - Understood the importance of `cursor: pointer;` and hover/focus states for better UX.
+  - Used an image overlay technique (`pointer-events: none;` with opacity) to compare the implementation against the original design mockup.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+For the next steps, I would like to focus on completing the remaining challenges:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Implementing full **keyboard navigation** so that users can open/close questions with only the keyboard.
+- Adding clear **hover and focus states** to improve accessibility and the overall user experience.
 
 ### Useful resources
 
@@ -108,6 +102,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I would like to sincerely thank **myself** for not giving up and continuing to push forward.  
+A big thank you to the **Frontend Mentor team** for creating this challenge and giving me the opportunity to practice and improve my skills.  
+I am also grateful to **OpenAI** and **Google** for creating **ChatGPT** and **Gemini**, which made it easier for me to complete this challenge and learn new techniques along the way.  
+Lastly, I want to thank every **tool, program, and source of encouragement** that supported me during this process. Without them, I wouldn’t have been able to finish this challenge successfully.
